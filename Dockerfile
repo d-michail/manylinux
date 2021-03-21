@@ -3,7 +3,7 @@ FROM quay.io/pypa/manylinux2010_x86_64:2021-03-15-2ae1698
 ARG GRAALVM_VERSION=21.0.0.2
 ARG MAVEN_VERSION=3.6.3
 
-RUN yum install -y zlib-devel
+RUN yum install -y zlib-devel git
 RUN cd /tmp && \
     curl -LO https://github.com/graalvm/graalvm-ce-builds/releases/download/vm-${GRAALVM_VERSION}/graalvm-ce-java11-linux-amd64-${GRAALVM_VERSION}.tar.gz && \
     tar xzf graalvm-ce-java11-linux-amd64-${GRAALVM_VERSION}.tar.gz -C /opt/ && \
